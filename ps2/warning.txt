@@ -1,0 +1,31 @@
+if warnings==0:
+    n+=1
+    warnings==3
+else:
+    if not letter_guessed.isalpha():
+        warnings-=1
+        print("Oops! That is not a valid letter. You have",warnings,"warnings left:")
+    else:
+        letter_guessed=letter_guessed.lower()
+        if letter_guessed in letters_guessed:
+            warnings-=1
+            print("Oops! You've already guessed that letter. You have",warnings,"warnings left:")
+        else:
+            letters_guessed+=letter_guessed
+            get_available_letters(letters_guessed)
+            guessed_word=get_guessed_word(secret_word, letters_guessed)
+            winning=is_word_guessed(secret_word, letters_guessed)
+            if letter_guessed in secret_word:
+                    print('Good guess:',guessed_word)
+            else:
+                    n+=1
+                    print('Oops! That letter is not in my word:',guessed_word)
+            print('----------------')
+             
+            if winning:
+                print('Congratulations, you won!')
+                break
+            
+            if n==available_guesses:
+                print('Sorry, you ran out of guesses. The word was',secret_word)
+    

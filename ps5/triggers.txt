@@ -1,0 +1,18 @@
+// trigger file - if you've done problem 9 but no stories are popping up, you
+// should edit this file to contain triggers that will fire on current news
+// stories!
+
+// title trigger named t1
+t1,TITLE,train
+
+// title trigger named t2
+t2,TITLE,Norfolk
+
+// description trigger named t3
+t3,DESCRIPTION,train
+
+// composite trigger named t4
+t4,OR,t2,t1
+
+// the trigger list contains t6 and t5
+ADD,t3,t4
